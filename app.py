@@ -7,7 +7,7 @@ import joblib
 # 🎯 Load the Trained Model
 # ========================
 # Replace "best_model.pkl" with the file where you saved your trained model
-model = joblib.load("best_model.pkl")
+model = joblib.load("best_model_logistic_regression.pkl")
 scaler = joblib.load("scaler (1).pkl")
 
 # ========================
@@ -60,3 +60,4 @@ st.markdown("""
 ---
 Made with ❤️ using **Streamlit** and Machine Learning  
 """)
+
