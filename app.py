@@ -6,7 +6,6 @@ import joblib
 # ========================
 # 🎯 Load the Trained Model
 # ========================
-# Replace "best_model.pkl" with the file where you saved your trained model
 model = joblib.load("best_model_logistic_regression.pkl")
 scaler = joblib.load("scaler (1).pkl")
 
@@ -18,19 +17,24 @@ st.set_page_config(page_title="Diabetes Prediction App", page_icon="🩺", layou
 st.title("🩺 Diabetes Prediction App")
 st.write("This app predicts whether a patient is **Diabetic** or **Non-Diabetic** based on health metrics.")
 
-# ========================
-# 📥 User Inputs
-# ========================
-st.sidebar.header("Enter Patient Data")
+st.markdown("### 📥 Enter Patient Data")
 
-pregnancies = st.sidebar.number_input("Number of Pregnancies", min_value=0, max_value=20, value=1)
-glucose = st.sidebar.number_input("Glucose Level", min_value=0, max_value=300, value=120)
-blood_pressure = st.sidebar.number_input("Blood Pressure (mm Hg)", min_value=0, max_value=200, value=70)
-skin_thickness = st.sidebar.number_input("Skin Thickness (mm)", min_value=0, max_value=100, value=20)
-insulin = st.sidebar.number_input("Insulin Level", min_value=0, max_value=1000, value=80)
-bmi = st.sidebar.number_input("BMI", min_value=0.0, max_value=70.0, value=25.0, format="%.1f")
-dpf = st.sidebar.number_input("Diabetes Pedigree Function", min_value=0.0, max_value=3.0, value=0.5, format="%.2f")
-age = st.sidebar.number_input("Age", min_value=1, max_value=120, value=30)
+# ========================
+# 📥 User Inputs (in main body)
+# ========================
+col1, col2 = st.columns(2)
+
+with col1:
+    pregnancies = st.number_input("Number of Pregnancies", min_value=0, max_value=20, value=1)
+    glucose = st.number_input("Glucose Level", min_value=0, max_value=300, value=120)
+    blood_pressure = st.number_input("Blood Pressure (mm Hg)", min_value=0, max_value=200, value=70)
+    skin_thickness = st.number_input("Skin Thickness (mm)", min_value=0, max_value=100, value=20)
+
+with col2:
+    insulin = st.number_input("Insulin Level", min_value=0, max_value=1000, value=80)
+    bmi = st.number_input("BMI", min_value=0.0, max_value=70.0, value=25.0, format="%.1f")
+    dpf = st.number_input("Diabetes Pedigree Function", min_value=0.0, max_value=3.0, value=0.5, format="%.2f")
+    age = st.number_input("Age", min_value=1, max_value=120, value=30)
 
 # ========================
 # 📊 Prepare Data
@@ -38,13 +42,12 @@ age = st.sidebar.number_input("Age", min_value=1, max_value=120, value=30)
 input_data = np.array([[pregnancies, glucose, blood_pressure, skin_thickness,
                         insulin, bmi, dpf, age]])
 
-# Scale data (important to use same scaler from training)
 input_data_scaled = scaler.transform(input_data)
 
 # ========================
 # 🤖 Make Prediction
 # ========================
-if st.sidebar.button("Predict"):
+if st.button("Predict"):
     prediction = model.predict(input_data_scaled)[0]
     proba = model.predict_proba(input_data_scaled)[0][1]
 
@@ -60,4 +63,3 @@ st.markdown("""
 ---
 Made with ❤️ using **Streamlit** and Machine Learning  
 """)
-
