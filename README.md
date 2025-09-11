@@ -71,14 +71,7 @@ We created an interactive **Streamlit app** where users can input patient data a
 
 ---
 
-## 🚀 How to Use the Project  
-
-### 🔧 Installation  
-Clone this repository and install the required dependencies:  
-```bash
-pip install -r requirements.txt
-
-👥 Who Can Use This Project
+# 👥 Who Can Use This Project
 
 -Healthcare professionals: As a quick screening tool for early detection.
 -Patients: To self-monitor risk based on health metrics.
