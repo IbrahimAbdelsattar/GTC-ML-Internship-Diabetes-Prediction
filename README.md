@@ -27,6 +27,29 @@ Run from the root so both artifact filenames resolve, including the space and pa
 
 This project demonstrates dataset-based classification and is not a clinical diagnostic tool.
 
+## UML diagrams
+
+### Main workflow
+
+The committed scaler transforms the eight input measurements before Logistic Regression inference.
+
+```mermaid
+sequenceDiagram
+    actor User
+    participant App as Streamlit app.py
+    participant Row as Eight-feature input
+    participant Scaler as Saved scaler
+    participant Model as Logistic Regression pickle
+    User->>App: Enter health measurements
+    App->>Row: Arrange eight values in training order
+    Row-->>App: Numeric input row
+    App->>Scaler: transform
+    Scaler-->>App: Scaled features
+    App->>Model: predict
+    Model-->>App: Predicted class
+    App-->>User: Display model result
+```
+
 ## Getting started
 
 ```bash
