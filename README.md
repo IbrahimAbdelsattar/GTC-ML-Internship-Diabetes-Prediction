@@ -1,218 +1,48 @@
-<br/><br/>
+# GTC Diabetes Prediction
 
-<!-- Animated Title -->
-<a href="#">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=36&pause=1000&color=7C3AED&center=true&vCenter=true&width=800&lines=Gtc Ml Internship Diabetes Prediction+%F0%9F%9A%80;Enterprise+Data+Science+%26+AI;Interactive+Analytics+%26+ML;Built+by+Ibrahim+Abdelsattar" alt="Typing SVG"/>
-</a>
+A GTC internship classification project with a Streamlit interface using a saved Logistic Regression model and scaler.
 
-<br/>
+**Technology:** Python · scikit-learn · pandas · NumPy · Streamlit
 
-<p align="center">
-  <b>Enterprise-Grade Data Science & Software Engineering Solution</b><br/>
-  <i>Pandas & NumPy · Scikit-Learn</i>
-</p>
+## Features
 
-<br/>
+- Enter eight features: pregnancies, glucose, blood pressure, skin thickness, insulin, BMI, diabetes pedigree function, and age.
+- Apply the fitted scaler before Logistic Regression inference.
+- Explore several classifiers with GridSearchCV in the training notebook.
 
-<!-- Badges Row -->
-<p align="center">
-  <img src="https://img.shields.io/badge/Pandas%20&%20NumPy-7C3AED?style=for-the-badge&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Scikit-Learn-7C3AED?style=for-the-badge&logoColor=white"/>
-  <img src="https://img.shields.io/badge/License-Academic-blue?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge"/>
-</p>
+## Repository guide
 
-<br/>
+| Path | Purpose |
+|---|---|
+| [app.py](app.py) | Input form, scaling, and predictions. |
+| [diabetes-prediction.ipynb](diabetes-prediction.ipynb) | EDA, preprocessing, and model selection. |
+| [best_model_logistic_regression.pkl](best_model_logistic_regression.pkl) | Saved classifier. |
+| [scaler (1).pkl](scaler%20%281%29.pkl) | Fitted scaler. |
+| [diabetes - diabetes.csv](diabetes%20-%20diabetes.csv) | Dataset. |
+| [requirements.txt](requirements.txt) | Runtime dependencies. |
 
-<!-- Quick Links -->
-<p align="center">
-  <a href="#-overview"><img src="https://img.shields.io/badge/📌-Overview-7C3AED?style=flat-square"/></a>
-  &nbsp;
-  <a href="#-core-features"><img src="https://img.shields.io/badge/🔥-Features-E11D48?style=flat-square"/></a>
-  &nbsp;
-  <a href="#%EF%B8%8F-system-architecture"><img src="https://img.shields.io/badge/🏗️-Architecture-0891B2?style=flat-square"/></a>
-  &nbsp;
-  <a href="#-technical-stack"><img src="https://img.shields.io/badge/⚙️-Tech%20Stack-16A34A?style=flat-square"/></a>
-  &nbsp;
-  <a href="#-getting-started"><img src="https://img.shields.io/badge/🚀-Getting%20Started-F59E0B?style=flat-square"/></a>
-</p>
+## Requirements and current limitations
 
-<br/>
+Run from the root so both artifact filenames resolve, including the space and parentheses in `scaler (1).pkl`. Keep the scaler, feature order, and classifier from the same training run. Update the notebook's Kaggle path to the included CSV when running locally.
 
----
+This project demonstrates dataset-based classification and is not a clinical diagnostic tool.
 
-## 📌 Overview
-
-**Gtc Ml Internship Diabetes Prediction** is an advanced software and data science repository engineered by **Ibrahim Abdelsattar**. It implements end-to-end data processing pipelines, predictive machine learning models, and production-ready code structures tailored for analytical precision and operational reliability.
-
-> Designed for seamless integration, high scalability, and robust computational performance.
-
----
-
-## 🎯 Problem & Solution Architecture
-
-<table>
-<tr>
-<td width="50%">
-
-### ❌ The Challenge
-
-Traditional analytical approaches face critical operational limitations:
-
-- 📉 Manual data wrangling and non-standardized preprocessing
-- 🔮 Lack of feature attribution and model explainability
-- ⚠️ Unoptimized hyperparameters leading to sub-optimal accuracy
-- 🔄 Inefficient deployment workflows and missing pipeline automation
-
-</td>
-<td width="50%">
-
-### ✅ Our Solution
-
-| Challenge | Implemented Solution |
-|-----------|----------------------|
-| Raw Data Noise | Automated cleaning & feature encoding |
-| Low Accuracy | Tuned ML ensembles & robust evaluation |
-| Deployment Gaps | Modular CLI/Web interfaces & reproducible scripts |
-| Missing Insights | Visual metric plots & structured reporting |
-
-</td>
-</tr>
-</table>
-
----
-
-## 🔥 Core Features
-
-<table>
-<tr>
-
-<td align="center" width="33%">
-<br/>
-<b>🤖 Machine Learning Models</b><br/><br/>
-• Logistic Regression<br/>• Random Forest<br/>• Support Vector Machine (SVM)<br/>
-Automated Hyperparameter Tuning<br/>
-Cross-Validation Pipeline<br/><br/>
-</td>
-<td align="center" width="33%">
-<br/>
-<b>📊 Data Preprocessing & EDA</b><br/><br/>
-Automated Missing Value Imputation<br/>
-Feature Engineering & Scaling<br/>
-Outlier Detection & Removal<br/>
-Exploratory Data Analysis Plots<br/><br/>
-</td>
-<td align="center" width="33%">
-<br/>
-<b>🎯 Production Guardrails</b><br/><br/>
-Strict Input Validation<br/>
-Reproducible Seed Setting<br/>
-Model Artifact Persistence<br/>
-Comprehensive Logging<br/><br/>
-</td>
-</tr>
-</table>
-
----
-
-## 🏗️ System Architecture & Data Flow
-
-<br/>
-
-```mermaid
-flowchart LR
-    A["📥 Data Ingestion
-Raw Datasets / Inputs"] --> B["🧹 Preprocessing & Cleaning
-Feature Scaling & Encoding"]
-    B --> C["⚙️ Feature Engineering
-Domain Transformation"]
-    C --> D["🤖 Machine Learning Pipeline
-Model Training & Evaluation"]
-    D --> E["📊 Predictive Output & Metrics
-Interactive Dashboard / Reports"]
-    style A fill:#1e1b4b,color:#a5b4fc
-    style B fill:#312e81,color:#c7d2fe
-    style D fill:#1e3a5f,color:#93c5fd
-    style E fill:#14532d,color:#86efac
-```
-
----
-
-## ⚙️ Technical Stack
-
-<div align="center">
-
-| Layer | Technology | Purpose |
-|-------|-----------|---------|
-| **Pandas & NumPy** | Core Framework / Library | Primary computing and analytical engine |
-| **Scikit-Learn** | Core Framework / Library | Primary computing and analytical engine |
-
-</div>
-
----
-
-
-
-## 📁 Directory Structure
-
-<details>
-<summary><b>📂 Click to expand repository tree</b></summary>
-
-```
-GTC-ML-Internship-Diabetes-Prediction/
-├── README.md
-├── app.py
-├── best_model_logistic_regression.pkl
-├── diabetes - diabetes.csv
-├── diabetes-prediction.ipynb
-├── model link.txt
-├── requirements.txt
-├── scaler (1).pkl
-```
-
-</details>
-
----
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-- Python 3.10+ (or Node.js 18+ for web apps)
-- Git & Virtualenv
-
-### Installation & Execution
+## Getting started
 
 ```bash
-# 1. Clone the repository
 git clone https://github.com/IbrahimAbdelsattar/GTC-ML-Internship-Diabetes-Prediction.git
 cd GTC-ML-Internship-Diabetes-Prediction
-
-# 2. Set up virtual environment (Python)
-python -m venv .venv
-source .venv/bin/activate  # On Windows: .venv\Scripts\activate
-
-# 3. Install dependencies
-pip install -r requirements.txt
-
-# 4. Launch project execution
-jupyter notebook
 ```
 
----
+Use a Python virtual environment:
 
-## 👤 Author & Contact
+```bash
+python -m venv .venv
+```
 
-<div align="center">
+Activate it with `source .venv/bin/activate` on macOS/Linux or `.venv\Scripts\Activate.ps1` in PowerShell.
 
-**Ibrahim Abdelsattar**  
-*Data Scientist & AI Specialist · MTI University (CS & AI, GPA 3.5)*
-
-[Email](mailto:ibrahimabdelsattar042@gmail.com) · [GitHub](https://github.com/IbrahimAbdelsattar) · [LinkedIn](https://linkedin.com/in/ibrahim-abdelsattar)
-
-<br/>
-
-<img src="https://img.shields.io/badge/Made%20with-Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
-<img src="https://img.shields.io/badge/Maintained%20by-Ibrahim%20Abdelsattar-7C3AED?style=for-the-badge"/>
-
-</div>
+```bash
+python -m pip install -r requirements.txt
+python -m streamlit run app.py
+```
